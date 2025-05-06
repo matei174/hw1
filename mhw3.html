@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TRAVELUMA - Viaggi</title>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="mhw2.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    </head>
+
+    <body>
+
+        <header>
+
+            <div id='overlay'></div>
+
+            <nav>
+                <div id="links">
+                  <div class="nav-sx">
+                    <a href="#">Home</a>
+                    <a href="#">Viaggi di gruppo</a>
+                    <a href="#">Chi siamo</a>
+                  </div>
+              
+                  <div class="nav-ct">
+                    <div id="logo">TRAVELUMA</div>
+                  </div>
+              
+                  <div class="nav-dx">
+                    <div class="menu">
+                        <a href="#">Blog</a>
+                        <div class="menu-contenuto">
+                            <a href="#">Articoli recenti</a>
+                            <a href="#">Categorie</a>
+                            <a href="#">Archivio</a>
+                        </div>
+                    </div>
+
+                    <a href="#">Contatti</a>
+
+                    <div class="menu">
+                        <a href="#" class="btn-auth">Accedi</a>
+                        <div class="menu-contenuto">
+                            <a href="#" id="btn-login">Login con Google</a>
+                            <a href="#" id="btn-logout" class="btn-auth" style="display:none;">Logout</a>
+                            <a href="#">Password dimenticata</a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-auth">Iscriviti</a>
+
+                    <div class="menu carrello-menu">
+                        
+                        <a href="#" class="btn-auth" id="toggle-carrello">
+                          <i class="fa fa-shopping-cart"></i>
+                        </a>
+
+                        <div class="menu-contenuto" id="contenuto-carrello">
+                          <h4>🛒 Il tuo carrello</h4>
+                          <div id="lista-carrello"></div>
+                          <p>Totale: <span id="totale">0</span>€</p>
+                        </div>
+
+                    </div>
+                    
+                    <div class="social">
+                      <a href="#" target="_blank" class="social"><i class="fab fa-instagram"></i></a>
+                      <a href="#" target="_blank" class="social"><i class="fab fa-tiktok"></i></a>
+                      <a href="#" target="_blank" class="social"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+
+                    
+
+                  </div>
+                </div>
+            </nav>
+              
+            <div class="menu-mobile">
+                <div class="menu-icona">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <div class="menu-link">
+                  <a href="#">Home</a>
+                  <a href="#">Chi siamo</a>
+                  <a href="#">Viaggi</a>
+                  <a href="#">Contatti</a>
+                  <a href="#">Accedi</a>
+                  <a href="#">Iscriviti</a>
+                  <a href="#" target="_blank" class="social"><i class="fab fa-instagram"> Instagram </i></a>
+                  <a href="#" target="_blank" class="social"><i class="fab fa-tiktok"> TikTok </i></a>
+                  <a href="#" target="_blank" class="social"><i class="fab fa-facebook-f"> Facebook </i></a>
+                </div>
+            </div>
+
+            <h1>
+                <em>Vieni a scoprire il mondo</em>
+                <br/>
+                     
+                <form id="form-destinazione">
+                    <input type="text" id="search" placeholder="Cerca destinazione..." class="barra-ricerca">
+                    <input type="submit" value="Cerca">
+                </form>
+
+                <br/>
+                <a href="#" class="btn-prenota">Prenota adesso il tuo viaggio</a>
+            </h1>
+
+        </header>
+
+
+        <section id="api">
+
+            <section id="mood-section">
+
+                <h2>Scegli una playlist per la tua vacanza</h2>
+
+                <form id="form-playlist">
+                    <input type="text" id="mood" name="mood" class="barra-ricerca" placeholder="es. rilassante, energico..." >
+                    <input type="submit" value="Cerca una playlist">
+                </form>
+                
+                <section id="album-view" class="album-view"></section>
+                <br>
+
+            </section>
+
+
+            <section id="meteo">
+            
+                <h2>Controlla il meteo</h2>
+                
+                <form id="form-meteo">
+                <input type="text" id="citta" class="barra-ricerca" placeholder="Inserisci una città" >
+                <input type="submit" value="Cerca Meteo">
+                </form>
+                
+                <div id="risultato-meteo">
+                    <h3><span id="nome-citta"></span></h3>
+                    <p id="descrizione-meteo"></p>
+                    <img id="icona-meteo" src="" alt="Icona meteo" style="display: none;">
+                    <p>Temperatura: <span id="temperatura"></span>°C</p>
+                  </div>
+                <br>
+            
+            </section>
+
+        </section>
+
+        
+        <section id="blocchi">
+
+            <div class="destinazioni" data-nome="bali">
+                <img src="https://image.urlaubspiraten.de/1280/image/upload/v1628092143/mediavault_images/AdobeStock_103587221_or1mfx.jpg" alt="Viaggio in Indonesia">
+                <div class="info">
+                    <h3> Visita Bali | Agosto 2025</h3>
+                    <p>Bali è un paradiso tropicale famoso per le sue spiagge, risaie e templi antichi.
+                        L’isola offre una perfetta combinazione di relax, cultura e avventura.
+                        Non perderti il tramonto a Tanah Lot e una giornata a Ubud!</p>
+                    <p class="prezzo"><strong>A partire da 1899€</strong></p>
+                    <p class="dettagli nascosto">Include hotel, tour guidati e transfer. Su richiesta si possono aggiungere i voli.</p>
+                    <button class="toggle-dettagli">Leggi di più</button>
+                    <i class="fa fa-shopping-cart aggiungi-carrello" data-id="Bali" data-prezzo="1899" title="Aggiungi al carrello"></i>
+                    <i class="fa fa-heart icona-cuore" data-id="Bali"></i>
+                    <span class="testo-cuore">Aggiungi ai preferiti</span>
+                </div>
+            </div>
+
+            <div class="destinazioni" data-nome="vienna">
+                <img src="https://image.urlaubspiraten.de/1024/image/upload/v1693834412/mediavault_images/shutterstock_2111152469_nodimj.jpg" alt="Viaggio in Austria">
+                <div class="info">
+                    <h3>Visita Vienna | Ottobre 2025</h3>
+                    <p>Vienna è il cuore culturale dell’Austria, con palazzi imperiali e caffè storici.
+                        Visita il Palazzo di Schönbrunn e ascolta un concerto di musica classica.
+                        In autunno, la città si colora di magia tra mercatini e festival.</p>
+                    <p class="prezzo"><strong>A partire da 399€</strong></p>
+                    <p class="dettagli nascosto">Include voli, hotel, tour guidati e transfer.</p>
+                    <button class="toggle-dettagli">Leggi di più</button>
+                    <i class="fa fa-shopping-cart aggiungi-carrello" data-id="Vienna" data-prezzo="399" title="Aggiungi al carrello"></i>
+                    <i class="fa fa-heart icona-cuore" data-id="Vienna"></i>
+                    <span class="testo-cuore">Aggiungi ai preferiti</span>
+                </div>
+            </div>
+
+            <div class="destinazioni" data-nome="parigi">
+                <img src="https://image.urlaubspiraten.de/1024/image/upload/v1693835791/mediavault_images/shutterstock_2192759643_lztadm.jpg" alt="Viaggio in Francia">
+                <div class="info">
+                    <h3>Visita Parigi | Settembre 2025</h3>
+                    <p>La città dell’amore incanta con la Torre Eiffel, Montmartre e il Louvre.
+                        Passeggia lungo la Senna e scopri i bistrot tipici della capitale francese.
+                        Settembre è perfetto per un picnic nei giardini del Luxembourg!</p>
+                    <p class="prezzo"><strong>A partire da 599€</strong></p>
+                    <p class="dettagli nascosto">Include hotel, tour guidati e transfer. Visita a Disneyland di un giorno prenotabile in loco.</p>
+                    <button class="toggle-dettagli">Leggi di più</button>
+                    <i class="fa fa-shopping-cart aggiungi-carrello" data-id="Parigi" data-prezzo="599" title="Aggiungi al carrello"></i>
+                    <i class="fa fa-heart icona-cuore" data-id="Parigi"></i>
+                    <span class="testo-cuore">Aggiungi ai preferiti</span>
+                </div>
+            </div>
+
+            <div class="destinazioni" data-nome="mykonos">
+                <img src="https://image.urlaubspiraten.de/1024/image/upload/v1641468062/Impressions%20and%20Other%20Assets/s3_evbvcd.jpg" alt="Viaggio in Grecia">
+                <div class="info">
+                    <h3>Visita Mykonos | Luglio 2025</h3>
+                    <p>Famosa per le sue case bianche e spiagge dorate, Mykonos è l’isola del divertimento.
+                        Goditi il tramonto a Little Venice e le serate nei beach club.
+                        Esplora le spiagge di Psarou e Super Paradise per un’esperienza unica!</p>
+                    <p class="prezzo"><strong>A partire da 450€</strong></p>
+                    <p class="dettagli nascosto">Include hotel, tour guidati e transfer.</p>
+                    <button class="toggle-dettagli">Leggi di più</button>
+                    <i class="fa fa-shopping-cart aggiungi-carrello" data-id="Mykonos" data-prezzo="450" title="Aggiungi al carrello"></i>
+                    <i class="fa fa-heart icona-cuore" data-id="Mykonos"></i>
+                    <span class="testo-cuore">Aggiungi ai preferiti</span>
+                </div>
+            </div>
+
+            <div class="destinazioni" data-nome="bucarest">
+                <img src="https://image.urlaubspiraten.de/1280/image/upload/v1616421168/mediavault_images/shutterstock_1174394233_w2r7l8.jpg" alt="Viaggio in Romania">
+                <div class="info">
+                    <h3>Visita Bucarest | Giugno 2025</h3>
+                    <p>La “Parigi dell’Est” è una città di contrasti, tra palazzi neoclassici e architettura sovietica.
+                        Visita il Palazzo del Parlamento, uno dei più grandi al mondo.
+                        Scopri la vivace vita notturna e i caffè alternativi del centro storico.</p>
+                    <p class="prezzo"><strong>A partire da 299€</strong></p>
+                    <p class="dettagli nascosto">Include hotel, tour guidati, transfer e visita dei castelli della Transilvania.</p>
+                    <button class="toggle-dettagli">Leggi di più</button>
+                    <i class="fa fa-shopping-cart aggiungi-carrello" data-id="Bucarest" data-prezzo="299" title="Aggiungi al carrello"></i>
+                    <i class="fa fa-heart icona-cuore" data-id="Bucarest"></i>
+                    <span class="testo-cuore">Aggiungi ai preferiti</span>
+                </div>
+            </div>
+
+            <div class="destinazioni" data-nome="roma">
+                <img src="https://image.urlaubspiraten.de/1024/image/upload/v1655808713/mediavault_images/AdobeStock_37045590_wvyn3s.jpg" alt="Viaggio in Italia">
+                <div class="info">
+                    <h3>Visita Roma | Maggio 2025</h3>
+                    <p>Roma è un museo a cielo aperto, con il Colosseo, il Vaticano e la Fontana di Trevi.
+                        Assapora la vera carbonara e un gelato mentre passeggi per Trastevere.
+                        Maggio è ideale per esplorare la città senza il caldo estivo!</p>
+                    <p class="prezzo"><strong>A partire da 239€</strong></p>
+                    <p class="dettagli nascosto">Include hotel, tour guidati e transfer.</p>
+                    <button class="toggle-dettagli">Leggi di più</button>
+                    <i class="fa fa-shopping-cart aggiungi-carrello" data-id="Roma" data-prezzo="239" title="Aggiungi al carrello"></i>
+                    <i class="fa fa-heart icona-cuore" data-id="Roma"></i>
+                    <span class="testo-cuore">Aggiungi ai preferiti</span>
+                </div>
+            </div>
+
+        </section>
+
+        <p id="nessun-risultato" style="display: none; text-align: center; font-weight: bold; padding: 20px;">
+            Nessuna destinazione trovata.
+        </p>
+     
+        <div class="scopri-di-piu">
+            <a href="#" class="btn-large">SCOPRI PIÙ DESTINAZIONI</a>
+            <p></p>
+        </div>
+
+        <section id="newsletter">
+
+            <div class="iscriviti">
+                <h1>-NEWSLETTER</h1>
+                <p>
+                    Rimani sempre aggiornato sulle nostre offerte, consigli di viaggio, destinazioni imperdibili e avventure da vivere in tutto il mondo. 
+                    Iscriviti alla newsletter di TRAVELUMA e lasciati ispirare ogni mese da itinerari esclusivi, racconti autentici e promozioni dedicate alla nostra community.  
+                    Il viaggio dei tuoi sogni potrebbe iniziare proprio da qui.
+                </p>
+            </div>
+
+            <div class="news-form">
+                <input type="text" placeholder="Nome" disabled>
+                <input type="text" placeholder="Cognome" disabled>
+                <input type="text" placeholder="Email" disabled>
+                <button class="btn-iscriviti">Iscriviti</button>
+            </div>
+
+        </section>
+
+        <footer>
+            <div id="footer">
+                <div class="footer-info">
+                    <h3>Social</h3>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">TikTok</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-info">
+                    <h3>Info Utili</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Assicurazione Viaggi</a></li>
+                        <li><a href="#">Documenti di viaggio</a></li>
+                        <li><a href="#">Visti e Passaporti</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-info">
+                    <h3>TRAVELUMA</h3>
+                    <ul>
+                        <li><a href="#">Chi siamo</a></li>
+                        <li><a href="#">Contatti</a></li>
+                        <li><a href="#">Lavora con noi</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-info">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Termini e Condizioni</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        
+    <script src="mhw2.js"></script>
+
+    </body>
+    
+</html>
