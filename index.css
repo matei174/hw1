@@ -1,0 +1,581 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    top: 0;
+    z-index: 99;
+    padding: 20px 60px;   
+    background-color: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(8px);
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+header {
+  color: white;
+  background-image: url(https://images4.alphacoders.com/806/806135.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1{
+  position: relative;
+  z-index: 1;
+}
+
+header nav{
+  position: relative;
+  z-index: 1;
+}
+
+#links {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-sx,
+.nav-dx {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+  
+  .nav-ct {
+    text-align: center;
+  }
+  
+  #logo {
+    position: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+  }
+  
+  #links a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: whitesmoke;
+    transition: color 0.3s;
+  }
+  
+  #links a:hover {
+    color: #c78d6b;
+  }
+  
+  .btn-auth {
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding:   12px 15px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .btn-auth:hover {
+    background: white;
+    color: #c78d6b;
+  }
+  
+.menu {
+    position: relative;
+}
+
+.menu-contenuto {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    min-width: 160px;
+    border-radius: 10px;
+    top: 170%;
+    z-index: 2000;
+}
+
+.menu-contenuto a {
+    color: whitesmoke;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+
+.menu-contenuto a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu:hover .menu-contenuto {
+    display: block;
+}
+
+.carrello-menu .menu-contenuto {
+  position: absolute;
+  width: 200px;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.social {
+  color: white;
+  font-size: 15 px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+  
+.social a {
+    color: white;
+    font-size: 15px;
+}
+  
+.social a:hover {
+  color: #c78d6b;
+}
+
+.barra-ricerca {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 20px;
+    border: none;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 300px;
+    width: 80%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-prenota{
+    color: whitesmoke;
+    display: inline-block;
+    padding: 15px 30px;
+    background: rgb(255, 255, 255, 0.3);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 150px;
+    
+}
+
+.btn-prenota:hover{
+    color: #333;
+    background: rgb(255, 255, 255, 0.7);
+    transform: scale(1.03);
+}
+
+#api {
+  display: flex;
+  gap: 40px; 
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; 
+  padding: 40px 20px;
+}
+
+#mood-section,
+#meteo {
+  flex: 1 1 400px;
+  max-width: 500px;
+  background-color: rgba(255,255,255,0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.album-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.album-view .album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  text-align: center;
+}
+
+.album-view .album img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.offerta-banner {
+  background-color: #ffeb3b;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#blocchi{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 10%;
+    flex-wrap: wrap;
+}
+
+.destinazioni {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    width: 30%; 
+    min-width: 280px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.destinazioni div {
+    display: flex;
+}
+
+.destinazioni img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    text-align: center;
+    padding: 30px;
+    flex-direction: column;
+}
+
+.info h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    min-height: 50px;
+}
+
+.info a {
+    margin-top: auto; 
+}
+
+.prezzo {
+  color: #c78d6b;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.nascosto {
+  display: none;
+}
+
+.aggiungi-carrello {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 10px;
+}
+
+.aggiungi-carrello:hover {
+  color: #c78d6b;
+}
+
+.icona-cuore {
+  cursor: pointer;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  color: gray;
+}
+
+.icona-cuore.preferito {
+  color: red;
+}
+
+.testo-cuore {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+
+.btn-large {
+    display: inline-block;
+    background: #c78d6b;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-large:hover {
+    background: #a8795c;
+}
+
+#newsletter{
+    display: flex;
+    background: #c78d6b;
+    padding: 100px;
+    justify-content: space-between;
+}
+
+.iscriviti {
+    color: white;
+    text-align: justify;
+    width: 50%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    max-width: 500px;
+    padding: 20px 20px;
+}
+
+.news-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.news-form input,
+.news-form button {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.btn-iscriviti {
+    background-color: #a8795c;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: not-allowed;
+}
+
+.btn-iscriviti:hover {
+    background-color: #8c624a;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #CCE5FF;
+    padding: 60px 10%;
+    color: #333;
+    text-align: left;
+}
+
+.footer-info {
+    flex: 1 1 200px;
+    margin: 20px;
+}
+
+.footer-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-info li {
+    margin-bottom: 10px;
+}
+
+.footer-info a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.footer-info a:hover {
+    color: #c78d6b;
+}
+ 
+.menu-mobile {
+  display: none;
+}
+
+
+
+@media (max-width: 768px) {
+  
+  nav {
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 0px 35px 0px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; 
+  }
+
+  #logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+  .menu-mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 20px;
+    left: 20px; 
+    z-index: 2000;
+  }
+
+  .menu-icona{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .menu-icona span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  .menu-link {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .menu-link a {
+    color: #c78d6b;
+    text-decoration: none;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .menu-mobile:hover .menu-link {
+    display: flex;
+    background: white;
+  }
+
+  .nav-sx, .nav-dx {
+    display: none;
+  }
+
+  .nav-ct {
+    margin: 10px 0;
+    font-size: 1.8rem;
+  }
+
+  .menu-contenuto {
+    position: static;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .menu-contenuto a {
+    text-align: center;
+  }
+
+  header {
+    height: auto;
+    min-height: 100vh;
+
+    padding-bottom: 60px;
+  }
+
+  .btn-prenota {
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    margin: 100px 20px 30px;
+  }
+
+  #blocchi {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .destinazioni {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .info {
+    padding: 20px;
+  }
+
+  #newsletter {
+    flex-direction: column;
+    padding: 60px 40px;
+    align-items: center;
+    display: flex;
+  }
+
+  .iscriviti {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px;
+    flex: 1;
+  }
+
+  .news-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 15px;
+    flex: 1;
+  }
+
+  #footer {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .footer-info {
+    margin-bottom: 30px;
+  }
+}

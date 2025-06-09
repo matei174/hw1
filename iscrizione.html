@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset="UTF-8">
+    <title>Registrazione</title>
+    <link rel="stylesheet" href="iscrizione.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Hand:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    </head>
+
+    <body>
+        <main>
+            <h1>TRAVELUMA</h1>
+            <h2>Iscriviti per iniziare ad organizzare la tua vacanza</h2>
+
+            <form name="form_registrazione" method="post" action="iscrizione.php">
+                <label>Nome</label>
+                <input type="text" name="nome">
+
+                <label>Cognome</label>
+                <input type="text" name="cognome">
+
+                <label>Email</label>
+                <input type="text" name="email">
+              
+                <label>Password</label>
+                <input type="password" name="password">
+              
+                <label>Conferma password</label>
+                <input type="password" name="conferma_password">
+              
+                <label>&nbsp;</label>
+                <input type="submit" value="Invia">
+              </form>
+              
+              <div id="errore"></div>
+            
+              <p>Hai già un account? <a href="login_session.php">Accedi</a></p>
+        </main>
+   
+        <script src="index.js"></script>
+        <script src="validazione.js"></script>
+
+    </body>
+</html>
